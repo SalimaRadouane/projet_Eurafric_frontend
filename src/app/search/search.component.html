@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      margin-top: 50px; 
+    }
+
+    table {
+      table-layout: fixed;
+      width: 100%;
+    }
+
+    td {
+      word-wrap: break-word;
+      max-width: 2px; 
+    }
+  </style>
+</head>
+<body>
+  <form class="d-flex" role="search" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="codeDomaine">Code Domaine</label>
+      <input class="form-control" type="search" id="codeDomaine" name="codeDomaine" placeholder="Code Domaine" [(ngModel)]="ParamCre.codeDomaine" aria-label="Search">
+    </div>
+    <div class="form-group">
+      <label for="codeApplication">Code Application</label>
+      <input class="form-control" type="search" id="codeApplication" name="codeApplication" placeholder="Code Application" [(ngModel)]="ParamCre.codeApplication" aria-label="Search">
+    </div>
+    <div class="form-group">
+      <label for="codeEvenement">Code Evenement</label>
+      <input class="form-control" type="search" id="codeEvenement" name="codeEvenement" placeholder="Code Evenement" [(ngModel)]="ParamCre.codeEvenement" aria-label="Search">
+    </div>
+    <div class="form-group">
+      <label for="codeStructure">Code Structure</label>
+      <input class="form-control" type="search" id="codeStructure" name="codeStructure" placeholder="Code Structure" [(ngModel)]="ParamCre.codeStructure" aria-label="Search">
+    </div>
+    <div class="form-group">
+      <label for="codeEmetteur">Code Emetteur</label>
+      <input class="form-control" type="search" id="codeEmetteur" name="codeEmetteur" placeholder="Code Emetteur" [(ngModel)]="ParamCre.codeEmetteur" aria-label="Search">
+    </div>
+    <button class="btn btn-outline-success" type="submit">Search</button>
+  </form>
+  
+  
+  <div style="width: 100%; overflow-x: auto;">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+        
+          <th>ID</th>
+          <th>Code Domaine</th>
+          <th>Code Application</th>
+          <th>Code Structure</th>
+          <th>Code Emetteur</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let paramCre of paramCreslist">
+          
+          <td>{{ paramCre.id }}</td>
+          <td>{{ paramCre.codeDomaine }}</td>
+          <td>{{ paramCre.codeApplication }}</td>
+          <td>{{ paramCre.codeStructure }}</td>
+          <td>{{ paramCre.codeEmetteur }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

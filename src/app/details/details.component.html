@@ -1,0 +1,38 @@
+<h2>Détails de l'enregistrement</h2>
+
+<div>
+  <p><strong>ID:</strong> {{ paramCre.id }}</p>
+  <p><strong>Code Domaine:</strong> {{ paramCre.codeDomaine }}</p>
+  <p><strong>Code Application:</strong> {{ paramCre.codeApplication }}</p>
+  <p><strong>Code Evenement:</strong> {{ paramCre.codeEvenement }}</p>
+  <p><strong>Code Structure:</strong> {{ paramCre.codeStructure }}</p>
+  <p><strong>Code Emetteur:</strong> {{ paramCre.codeEmetteur }}</p>
+  <p><strong>A Enrichir:</strong> {{ paramCre.aEnrichir }}</p>
+  <p><strong>A Comptabiliser:</strong> {{ paramCre.aComptabiliser }}</p>
+  <p><strong>Date Mise Prod:</strong> {{ paramCre.dateMiseProd | date }}</p>
+  <p><strong>Etat Initial:</strong> {{ paramCre.etatInitial }}</p>
+  <p><strong>Top Aggra Cdc:</strong> {{ paramCre.topAggraCdc }}</p>
+  <p><strong>Val Aggra Cdc:</strong> {{ paramCre.valAggraCdc }}</p>
+  <p><strong>Date Maj Aggra Cdc:</strong> {{ paramCre.dateMajAggraCdc | date }}</p>
+  <p><strong>Top Aggra Ctx:</strong> {{ paramCre.topAggraCtx }}</p>
+  <p><strong>Val Aggra Ctx:</strong> {{ paramCre.valAggraCtx }}</p>
+  <p><strong>Date Maj Aggra Ctx:</strong> {{ paramCre.dateMajAggraCtx | date }}</p>
+  <p><strong>RIB:</strong> {{ paramCre.rib }}</p>
+  <p><strong>Date Der Passage:</strong> {{ paramCre.dateDerPassage | date }}</p>
+  <p><strong>Ligne Valide:</strong> {{ paramCre.ligneValide }}</p>
+  <p><strong>Ligne Rejete:</strong> {{ paramCre.ligneRejete }}</p>
+  <p><strong>Compteur Even:</strong> {{ paramCre.compteurEven }}</p>
+  <p><strong>Top Aggra Prec:</strong> {{ paramCre.topAggraPrec }}</p>
+  <p><strong>Val Aggra Prec:</strong> {{ paramCre.valAggraPrec }}</p>
+  <p><strong>Date Maj Aggra Prec:</strong> {{ paramCre.dateMajAggraPrec | date }}</p>
+  <p><strong>Top Desac:</strong> {{ paramCre.topDesac }}</p>
+  <p><strong>Date Desac:</strong> {{ paramCre.dateDesac | date }}</p>
+  
+  <button type="button" class="btn btn-primary btn-lg" (click)="update(paramCre.id)">Modifier</button>
+  <span class="mx-2"></span>
+  <!-- <button *ngIf="paramCre.topDesac === 'N'" type="button" class="btn btn-danger btn-lg" (click)="desactiver(paramCre.id)">Desactiver</button>
+  <button *ngIf="paramCre.topDesac !== 'N'" type="button" class="btn btn-success btn-lg" (click)="activer(paramCre.id)">Activer</button>
+   -->
+
+
+</div>

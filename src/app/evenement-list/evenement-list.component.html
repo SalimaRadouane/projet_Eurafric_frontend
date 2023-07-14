@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      margin-top: 50px; 
+    }
+
+    table {
+      table-layout: fixed;
+      width: 100%;
+    }
+
+    td {
+      word-wrap: break-word;
+      max-width: 2px; 
+    }
+  </style>
+</head>
+<body>
+  <div style="width: 100%; overflow-x: auto;">
+    <table class="table table-striped">
+      <thead>
+        
+        <tr>
+          <th>D/A</th>
+          <th>ID</th>
+          <th>Code Domaine</th>
+          <th>Code Application</th>
+          <th>Code Structure</th>
+          <th>Code Emetteur</th>
+          <th> <div class="navbar-nav ms-auto">
+          <button class="btn btn-link nav-link" routerLink="search" routerLinkActive="active" type="button">
+            <i class="bi bi-search"></i> chercher
+          </button>
+        </div></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let paramCre of paramCres">
+          <td>
+            <button *ngIf="paramCre.topDesac === 'N'" (click)="desactiver(paramCre.id)" class="round-button-red" title="Désactiver l'événement">D</button>
+            <button *ngIf="paramCre.topDesac === 'O'" (click)="activer(paramCre.id)" class="round-button-green"title="Activer l'événement">A</button>
+
+  
+            
+          </td>
+          <td>{{ paramCre.id }}</td>
+          <td>{{ paramCre.codeDomaine }}</td>
+          <td>{{ paramCre.codeApplication }}</td>
+          <td>{{ paramCre.codeStructure }}</td>
+          <td>{{ paramCre.codeEmetteur }}</td>
+          <td><button *ngIf="paramCre.topDesac === 'N'" type="button" class="btn btn-secondary"(click) = "details(paramCre.id)"  >details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
