@@ -1,92 +1,169 @@
+<style>
+  .form-table td {
+    padding: 0 30px;
+  }
+</style>
 
-<h1>Modifier </h1>
+<div class="alert alert-success"   *ngIf="suc===1">
+  <strong >Success!</strong>
+</div>
+
+<h1>modifier element </h1>
 
 <div class="container">
   <form (ngSubmit)="onSubmit()">
-    
-    <div class="form-group">
-      <label for="codeDomaine">Code Domaine</label>
-      <input type="text" class="form-control" id="codeDomaine" name="codeDomaine"[(ngModel)]="newParamCre.codeDomaine">
-    </div>
-    <div class="form-group">
-      <label for="codeApplication">Code Application</label>
-      <input type="text" class="form-control" id="codeApplication"name="codeApplication" [(ngModel)]="newParamCre.codeApplication">
-    </div>
-    <div class="form-group">
-      <label for="codeEvenement">Code Evenement</label>
-      <input type="text" class="form-control" id="codeEvenement"name="codeEvenement" [(ngModel)]="newParamCre.codeEvenement">
-    </div>
-    <div class="form-group">
-      <label for="codeStructure">Code Structure</label>
-      <input type="text" class="form-control" id="codeStructure" name="codeStructure"[(ngModel)]="newParamCre.codeStructure">
-    </div>
-    <div class="form-group">
-      <label for="codeEmetteur">Code Emetteur</label>
-      <input type="text" class="form-control" id="codeEmetteur" name="codeEmetteur"[(ngModel)]="newParamCre.codeEmetteur">
-    </div>
-    <div class="form-group">
-      <label for="aEnrichir">A Enrichir</label>
-      <input type="text" class="form-control" id="aEnrichir"name="aEnrichir" [(ngModel)]="newParamCre.aEnrichir">
-    </div>
-    <div class="form-group">
-      <label for="aComptabiliser">A Comptabiliser</label>
-      <input type="text" class="form-control" id="aComptabiliser"name="aComptabiliser" [(ngModel)]="newParamCre.aComptabiliser">
-    </div>
-    <div class="form-group">
-      <label for="dateMiseProd">Date Mise Prod</label>
-      <input type="date" class="form-control" id="dateMiseProd" name="dateMiseProd"[(ngModel)]="newParamCre.dateMiseProd">
-    </div>
-    <div class="form-group">
-      <label for="etatInitial">Etat Initial</label>
-      <input type="text" class="form-control" id="etatInitial"name="etatInitial" [(ngModel)]="newParamCre.etatInitial">
-    </div>
-    <div class="form-group">
-      <label for="topAggraCdc">Top Aggra Cdc</label>
-      <input type="text" class="form-control" id="topAggraCdc"name="topAggraCdc" [(ngModel)]="newParamCre.topAggraCdc">
-    </div>
-    <div class="form-group">
-      <label for="valAggraCdc">Val Aggra Cdc</label>
-      <input type="text" class="form-control" id="valAggraCdc"name="valAggraCdc" [(ngModel)]="newParamCre.valAggraCdc">
-    </div>
-    <div class="form-group">
-      <label for="valAggraCdc">date Maj Aggra Cdc</label>
-      <input type="date" class="form-control" id="dateMajAggraCdc" name="dateMajAggraCdc"[(ngModel)]="newParamCre.dateMajAggraCdc">
-    </div>
-    <div class="form-group">
-      <label for="valAggraCdc">top Aggra Ctx</label>
-      <input type="text" class="form-control" id="topAggraCtx" name="topAggraCtx"[(ngModel)]="newParamCre.topAggraCtx">
-    </div>
-    <div class="form-group">
-      <label for="valAggraCdc">val Aggra Ctx</label>
-      <input type="text" class="form-control" id="valAggraCdc" name="valAggraCtx"[(ngModel)]="newParamCre.valAggraCtx">
-    </div>
-    
-    <div class="form-group">
-      <label for="valAggraCdc">date Maj Aggra Ctx</label>
-      <input type="date" class="form-control" id="dateMajAggraCtx"name="dateMajAggraCtx" [(ngModel)]="newParamCre.dateMajAggraCtx">
-    </div>
-    
-    <div class="form-group">
-      <label for="valAggraCdc">Rib</label>
-      <input type="text" class="form-control" id="rib" name="rib"[(ngModel)]="newParamCre.rib">
-    </div>
+    <table class="form-table">
+      <tr>
+        <td>
+          <div class="form-group">
+            <label for="codeDomaine">Code Domaine</label>
+            <input type="text" class="form-control" id="codeDomaine" name="codeDomaine" [(ngModel)]="newParamCre.codeDomaine">
+            <p class="error-message" *ngIf="newParamCre.codeDomaine && newParamCre.codeDomaine.length > 5">
+              Le champ Code Domaine dépasse la taille maximale autorisée.
+            </p>
+          </div>
+          <div class="form-group">
+            <label for="codeApplication">Code Application</label>
+            <input type="text" class="form-control" id="codeApplication" name="codeApplication" [(ngModel)]="newParamCre.codeApplication">
+            <p class="error-message" *ngIf="newParamCre.codeApplication && newParamCre.codeApplication.length > 5">
+              Le champ Code Application dépasse la taille maximale autorisée.
+            </p>
+          </div>
+        </td>
+        <td>
+          <div class="form-group">
+            <label for="codeEvenement">Code Evenement</label>
+            <input type="text" class="form-control" id="codeEvenement" name="codeEvenement" [(ngModel)]="newParamCre.codeEvenement">
+            <p class="error-message" *ngIf="newParamCre.codeEvenement && newParamCre.codeEvenement.length > 15">
+              Le champ Code Evenement dépasse la taille maximale autorisée.
+            </p>
+          </div>
+          <div class="form-group">
+            <label for="codeStructure">Code Structure</label>
+            <input type="text" class="form-control" id="codeStructure" name="codeStructure" [(ngModel)]="newParamCre.codeStructure">
+            <p class="error-message" *ngIf="newParamCre.codeStructure && newParamCre.codeStructure.length > 19">
+              Le champ Code Structure dépasse la taille maximale autorisée.
+            </p>
+          </div>
+        </td>
+        <td>
+          <div class="form-group">
+            <label for="codeEmetteur">Code Emetteur</label>
+            <input type="text" class="form-control" id="codeEmetteur" name="codeEmetteur" [(ngModel)]="newParamCre.codeEmetteur">
+            <p class="error-message" *ngIf="newParamCre.codeEmetteur && newParamCre.codeEmetteur.length > 6">
+              Le champ Code Emetteur dépasse la taille maximale autorisée.
+            </p>
+          </div>
+          <div class="form-group">
+            <label for="aEnrichir">A Enrichir</label>
+            <input type="text" class="form-control" id="aEnrichir" name="aEnrichir" [(ngModel)]="newParamCre.aEnrichir">
+            <p class="error-message" *ngIf="newParamCre.aEnrichir && newParamCre.aEnrichir.length > 3">
+              Le champ aEnrichir dépasse la taille maximale autorisée.
+            </p>
+          </div>
+        </td>
+        <td>
+          <div class="form-group">
+            <label for="aComptabiliser">A Comptabiliser</label>
+            <input type="text" class="form-control" id="aComptabiliser" name="aComptabiliser" [(ngModel)]="newParamCre.aComptabiliser">
+            <p class="error-message" *ngIf="newParamCre.aComptabiliser && newParamCre.aComptabiliser.length > 1">
+              Le champ aComptabiliser dépasse la taille maximale autorisée.
+            </p>
+          </div>
+          <div class="form-group">
+            <label for="dateMiseProd">Date Mise Prod</label>
+            <input type="date" class="form-control" id="dateMiseProd" name="dateMiseProd" [(ngModel)]="newParamCre.dateMiseProd">
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="form-group">
+            <label for="etatInitial">Etat Initial</label>
+            <input type="text" class="form-control" id="etatInitial" name="etatInitial" [(ngModel)]="newParamCre.etatInitial">
+            <p class="error-message" *ngIf="newParamCre.etatInitial && newParamCre.etatInitial.length > 2">
+              Le champ etatInitial dépasse la taille maximale autorisée.
+            </p>
+          </div>
+          <div class="form-group">
+            <label for="topAggraCdc">Top Aggra Cdc</label>
+            <input type="text" class="form-control" id="topAggraCdc" name="topAggraCdc" [(ngModel)]="newParamCre.topAggraCdc">
+            <p class="error-message" *ngIf="newParamCre.topAggraCdc && newParamCre.topAggraCdc.length > 1">
+              Le champ topAggraCdc dépasse la taille maximale autorisée.
+            </p>
+          </div>
+        </td>
+        <td>
+          <div class="form-group">
+            <label for="valAggraCdc">Val Aggra Cdc</label>
+            <input type="text" class="form-control" id="valAggraCdc" name="valAggraCdc" [(ngModel)]="newParamCre.valAggraCdc">
+            <p class="error-message" *ngIf="newParamCre.valAggraCdc && newParamCre.valAggraCdc.length > 2">
+              Le champ valAggraCdc dépasse la taille maximale autorisée.
+            </p>
+          </div>
+          <div class="form-group">
+            <label for="dateMajAggraCdc">Date Maj Aggra Cdc</label>
+            <input type="date" class="form-control" id="dateMajAggraCdc" name="dateMajAggraCdc" [(ngModel)]="newParamCre.dateMajAggraCdc">
+          </div>
+        </td>
+        <td>
+          <div class="form-group">
+            <label for="topAggraCtx">Top Aggra Ctx</label>
+            <input type="text" class="form-control" id="topAggraCtx" name="topAggraCtx" [(ngModel)]="newParamCre.topAggraCtx">
+            <p class="error-message" *ngIf="newParamCre.topAggraCtx && newParamCre.topAggraCtx.length > 1">
+              Le champ topAggraCtx dépasse la taille maximale autorisée.
+            </p>
+          </div>
+          <div class="form-group">
+            <label for="valAggraCtx">Val Aggra Ctx</label>
+            <input type="text" class="form-control" id="valAggraCtx" name="valAggraCtx" [(ngModel)]="newParamCre.valAggraCtx">
+            <p class="error-message" *ngIf="newParamCre.valAggraCtx && newParamCre.valAggraCtx.length > 2">
+              Le champ valAggraCdc dépasse la taille maximale autorisée.
+            </p>
+          </div>
+        </td>
+        <td>
+          <div class="form-group">
+            <label for="dateMajAggraCtx">Date Maj Aggra Ctx</label>
+            <input type="date" class="form-control" id="dateMajAggraCtx" name="dateMajAggraCtx" [(ngModel)]="newParamCre.dateMajAggraCtx">
+          </div>
+          <div class="form-group">
+            <label for="rib">Rib</label>
+            <input type="text" class="form-control" id="rib" name="rib" [(ngModel)]="newParamCre.rib">
+            <p class="error-message" *ngIf="newParamCre.rib && newParamCre.rib.length > 3">
+              Le champ Rib dépasse la taille maximale autorisée.
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="form-group">
+            <label for="topAggraPrec">Top Aggra Prec</label>
+            <input type="text" class="form-control" id="topAggraPrec" name="topAggraPrec" [(ngModel)]="newParamCre.topAggraPrec">
+            <p class="error-message" *ngIf="newParamCre.topAggraPrec && newParamCre.topAggraPrec.length > 1">
+              Le champ topAggraPrec dépasse la taille maximale autorisée.
+            </p>
+          </div>
+          <div class="form-group">
+            <label for="valAggraPrec">Val Aggra Prec</label>
+            <input type="text" class="form-control" id="valAggraPrec" name="valAggraPrec" [(ngModel)]="newParamCre.valAggraPrec">
+            <p class="error-message" *ngIf="newParamCre.valAggraPrec && newParamCre.valAggraPrec.length > 2">
+              Le champ topAggraPrec dépasse la taille maximale autorisée.
+            </p>
+          </div>
+        </td>
+        <td>
+          <div class="form-group">
+            <label for="dateMajAggraPrec">Date Maj Aggra Prec</label>
+            <input type="date" class="form-control" id="dateMajAggraPrec" name="dateMajAggraPrec" [(ngModel)]="newParamCre.dateMajAggraPrec">
+          </div>
+        </td>
+      </tr>
+    </table>
 
-    <div class="form-group">
-      <label for="valAggraCdc">top Aggra Prec</label>
-      <input type="text" class="form-control" id="topAggraPrec" name="topAggraPrec"[(ngModel)]="newParamCre.topAggraPrec">
-    </div>
-    <div class="form-group">
-      <label for="valAggraCdc">val Aggra Prec</label>
-      <input type="text" class="form-control" id="valAggraPrec" name="valAggraPrec"[(ngModel)]="newParamCre.valAggraPrec">
-    </div>
-    <div class="form-group">
-      <label for="valAggraCdc">date Maj Aggra Prec</label>
-      <input type="date" class="form-control" id="dateMajAggraPrec"name="dateMajAggraPrec" [(ngModel)]="newParamCre.dateMajAggraPrec">
-    </div>
-    <div class="form-group">
-      <label for="valAggraCdc">date Maj Aggra Prec</label>
-      <input type="date" class="form-control" id="dateMajAggraPrec"name="dateMajAggraPrec" [(ngModel)]="newParamCre.dateMajAggraPrec">
-    </div>
     <div class="d-grid gap-2 col-6 mx-auto">
-      <button class="btn btn-success" type="submit">Modifier</button>
+      <button class="btn btn-success" type="submit">modifier</button>
     </div>
+  </form>
+</div>

@@ -12,6 +12,7 @@ export class UpdateComponent {
   newParamCre: paramcre = new paramcre();
   champsEnErreur: string[] = [];
   id!: number;
+  suc!: number;
 
   constructor(
     private paramCreService: ParamCreService,
@@ -31,6 +32,7 @@ export class UpdateComponent {
     this.paramCreService.updateParamCre(this.newParamCre)
       .subscribe(
         () => {
+          this.suc=1;
           console.log('ParamCre mis à jour avec succès');
         },
         (error) => {

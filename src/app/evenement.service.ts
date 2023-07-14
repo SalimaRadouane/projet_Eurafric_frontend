@@ -14,6 +14,14 @@ export class ParamCreService {
   getParamCres(): Observable<paramcre[]> {
     return this.http.get<paramcre[]>(`${this.apiUrl}/all`);
   }
+  getPaginatedEntities(pageNumber: number, pageSize: number): Observable<paramcre[]> {
+    let params = new HttpParams()
+      .set('page', pageNumber.toString())
+      .set('size', pageSize.toString())
+
+    return this.http.get<paramcre[]>(`${this.apiUrl}/donnees`, { params });
+  }
+  
 
   addParamCre(paramCre: paramcre): Observable<paramcre> {
     

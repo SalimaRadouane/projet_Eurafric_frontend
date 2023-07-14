@@ -22,6 +22,7 @@ export class ParamCreDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getParamCreDetails();
+    console.log(paramcre)
   }
 
   getParamCreDetails(): void {

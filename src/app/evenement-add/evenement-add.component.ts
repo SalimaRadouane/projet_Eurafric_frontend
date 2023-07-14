@@ -21,7 +21,6 @@ export class EvenementAddComponent {
 
 
     this.addParamCre();
-    console.log("wert")
   }
   addParamCre(): void {
     this.paramCreService.addParamCre(this.newParamCre)

@@ -1,38 +1,121 @@
-<h2>Détails de l'enregistrement</h2>
+<style>
+  .form-table td {
+    padding: 0 30px;
+  }
+</style>
 
-<div>
-  <p><strong>ID:</strong> {{ paramCre.id }}</p>
-  <p><strong>Code Domaine:</strong> {{ paramCre.codeDomaine }}</p>
-  <p><strong>Code Application:</strong> {{ paramCre.codeApplication }}</p>
-  <p><strong>Code Evenement:</strong> {{ paramCre.codeEvenement }}</p>
-  <p><strong>Code Structure:</strong> {{ paramCre.codeStructure }}</p>
-  <p><strong>Code Emetteur:</strong> {{ paramCre.codeEmetteur }}</p>
-  <p><strong>A Enrichir:</strong> {{ paramCre.aEnrichir }}</p>
-  <p><strong>A Comptabiliser:</strong> {{ paramCre.aComptabiliser }}</p>
-  <p><strong>Date Mise Prod:</strong> {{ paramCre.dateMiseProd | date }}</p>
-  <p><strong>Etat Initial:</strong> {{ paramCre.etatInitial }}</p>
-  <p><strong>Top Aggra Cdc:</strong> {{ paramCre.topAggraCdc }}</p>
-  <p><strong>Val Aggra Cdc:</strong> {{ paramCre.valAggraCdc }}</p>
-  <p><strong>Date Maj Aggra Cdc:</strong> {{ paramCre.dateMajAggraCdc | date }}</p>
-  <p><strong>Top Aggra Ctx:</strong> {{ paramCre.topAggraCtx }}</p>
-  <p><strong>Val Aggra Ctx:</strong> {{ paramCre.valAggraCtx }}</p>
-  <p><strong>Date Maj Aggra Ctx:</strong> {{ paramCre.dateMajAggraCtx | date }}</p>
-  <p><strong>RIB:</strong> {{ paramCre.rib }}</p>
-  <p><strong>Date Der Passage:</strong> {{ paramCre.dateDerPassage | date }}</p>
-  <p><strong>Ligne Valide:</strong> {{ paramCre.ligneValide }}</p>
-  <p><strong>Ligne Rejete:</strong> {{ paramCre.ligneRejete }}</p>
-  <p><strong>Compteur Even:</strong> {{ paramCre.compteurEven }}</p>
-  <p><strong>Top Aggra Prec:</strong> {{ paramCre.topAggraPrec }}</p>
-  <p><strong>Val Aggra Prec:</strong> {{ paramCre.valAggraPrec }}</p>
-  <p><strong>Date Maj Aggra Prec:</strong> {{ paramCre.dateMajAggraPrec | date }}</p>
-  <p><strong>Top Desac:</strong> {{ paramCre.topDesac }}</p>
-  <p><strong>Date Desac:</strong> {{ paramCre.dateDesac | date }}</p>
+
+<h1>details de l'Evenement</h1>
+
+<div class="container">
+    <table class="form-table">
+      <tr>
+        <td>
+          <div class="form-group">
+            <label for="codeDomaine"><Strong>Code Domaine</Strong></label>
+              <p>{{ paramCre.codeDomaine }}</p>
+          </div>
+          <div class="form-group">
+            <label for="codeApplication"><Strong>Code Application</Strong></label>
+            <p>{{ paramCre.codeApplication }}</p>
+          </div>
+        </td>
+        <td>
+          <div class="form-group">
+            <label for="codeEvenement"><Strong>Code Evenement</Strong></label>
+            <p>{{ paramCre.codeEvenement }}</p>
+          </div>
+          <div class="form-group">
+            <label for="codeStructure"><Strong>Code Structure</Strong></label>
+           <p>{{ paramCre.codeStructure }}</p>
+          </div>
+        </td>
+        <td>
+          <div class="form-group">
+            <label for="codeEmetteur"><Strong>Code Emetteur</Strong></label>
+          <p>{{ paramCre.codeEmetteur }}</p>
+          </div>
+          <div class="form-group">
+            <label for="aEnrichir"><Strong>A Enrichir</Strong></label>
+            <p>{{ paramCre.aEnrichir }}</p>
+          </div>
+        </td>
+        <td>
+          <div class="form-group">
+            <label for="aComptabiliser"><Strong>A Comptabiliser</Strong></label>
+            <p>{{ paramCre.aComptabiliser }}</p>
+          </div>
+          <div class="form-group">
+            <label for="dateMiseProd"><Strong>Date Mise Prod</Strong></label>
+            <p>{{ paramCre.dateMiseProd | date }}</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="form-group">
+            <label for="etatInitial"><Strong>Etat Initial</Strong></label>
+            <p>{{ paramCre.etatInitial }}</p>
+          </div>
+          <div class="form-group">
+            <label for="topAggraCdc"><Strong>Top Aggra Cdc</Strong></label>
+           <p>{{ paramCre.topAggraCdc }}</p>
+          </div>
+        </td>
+        <td>
+          <div class="form-group">
+            <label for="valAggraCdc"><Strong>Val Aggra Cdc</Strong></label>
+           <p>{{ paramCre.valAggraCdc }}</p>
+          </div>
+          <div class="form-group">
+            <label for="dateMajAggraCdc"><Strong>Date Maj Aggra Cdc</Strong></label>
+            <p>{{ paramCre.dateMajAggraCdc | date }}</p>
+          </div>
+        </td>
+        <td>
+          <div class="form-group">
+            <label for="topAggraCtx"><Strong>Top Aggra Ctx</Strong></label>
+            <p>{{ paramCre.topAggraCtx }}</p>
+          </div>
+          <div class="form-group">
+            <label for="valAggraCtx"><Strong>Val Aggra Ctx</Strong></label>
+            <p>{{ paramCre.valAggraCtx }}</p>
+          </div>
+        </td>
+        <td>
+          <div class="form-group">
+            <label for="dateMajAggraCtx"><Strong>Date Maj Aggra Ctx</Strong></label>
+            <p>{{ paramCre.dateMajAggraCtx | date }}</p>
+          </div>
+          <div class="form-group">
+            <label for="rib"><Strong>Rib</Strong></label>
+           <p>{{ paramCre.rib }}</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="form-group">
+            <label for="topAggraPrec"><Strong>Top Aggra Prec</Strong></label> <p>{{ paramCre.topAggraPrec }}</p>
+          </div>
+          <div class="form-group">
+            <label for="valAggraPrec"><Strong>Val Aggra Prec</Strong></label>
+            <p>{{ paramCre.valAggraPrec }}</p>
+          </div>
+        </td>
+        <td>
+          <div class="form-group">
+            <label for="dateMajAggraPrec"><Strong>Date Maj Aggra Prec</Strong></label>
+            <p>{{ paramCre.valAggraPrec }}</p>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <button type="button" class="btn btn-primary btn-lg" (click)="update(paramCre.id)">Modifier</button>
+    <span class="mx-2"></span>
+    <!-- <button *ngIf="paramCre.topDesac === 'N'" type="button" class="btn btn-danger btn-lg" (click)="desactiver(paramCre.id)">Desactiver</button>
+    <button *ngIf="paramCre.topDesac !== 'N'" type="button" class="btn btn-success btn-lg" (click)="activer(paramCre.id)">Activer</button>
+     -->
   
-  <button type="button" class="btn btn-primary btn-lg" (click)="update(paramCre.id)">Modifier</button>
-  <span class="mx-2"></span>
-  <!-- <button *ngIf="paramCre.topDesac === 'N'" type="button" class="btn btn-danger btn-lg" (click)="desactiver(paramCre.id)">Desactiver</button>
-  <button *ngIf="paramCre.topDesac !== 'N'" type="button" class="btn btn-success btn-lg" (click)="activer(paramCre.id)">Activer</button>
-   -->
-
-
 </div>

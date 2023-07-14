@@ -57,5 +57,22 @@
       </tbody>
     </table>
   </div>
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      <!-- ... -->
+      <li class="page-item" [class.disabled]="currentPage === getTotalPages()[0]">
+        <a class="page-link" (click)="goToPreviousPage()">Previous</a>
+      </li>
+      <li class="page-item" *ngFor="let page of getTotalPages()">
+        <a class="page-link" [class.active]="currentPage === page" (click)="goToPage(page)">{{ page }}</a>
+      </li>
+      <li class="page-item" [class.disabled]="currentPage === getTotalPages()[getTotalPages().length - 1]">
+        <a class="page-link" (click)="goToNextPage()">Next</a>
+      </li>
+      <!-- ... -->
+    </ul>
+  </nav>
+  
+  
 </body>
 </html>
