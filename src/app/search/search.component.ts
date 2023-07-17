@@ -11,22 +11,31 @@ import { Router } from '@angular/router';
 export class SearchComponent {
   paramCreslist!: paramcre[];
   ParamCre:  paramcre = new paramcre();
-  
-  constructor(private paramCreService: ParamCreService,private router: Router ) { 
-   
+  startDate: string = '';
+  endDate: string = '';
+  pageSize: number = 5; 
+  currentPage: number = 1;
+  totalItems: number = 0;
+  totalPages: number[] = [];
+  paginatedParamCres!: paramcre[];
+
+
+  constructor(private paramCreService: ParamCreService, private router: Router) { 
   }
 
-  onSubmit(){
-    
+  onSubmit() {
+    this.currentPage = 1;
     this.search();
-    console.log("wert")
   }
 
   search() {
-    this.paramCreService.search(this.ParamCre).subscribe(
+    this.paramCreService.search(this.ParamCre, this.startDate, this.endDate).subscribe(
       (data: paramcre[]) => {
         this.paramCreslist = data;
-        console.log(data);
+        this.totalItems = data.length;
+        this.calculateTotalPages();
+        this.paginate();
+        console.log(this.totalItems);
       },
       (error) => {
         console.log('Une erreur s\'est produite lors de la recherche :', error);
@@ -34,5 +43,24 @@ export class SearchComponent {
     );
   }
   
-  
+  calculateTotalPages() {
+    this.totalPages = [];
+    const pageCount = Math.ceil(this.totalItems / this.pageSize);
+    for (let i = 1; i <= pageCount; i++) {
+      this.totalPages.push(i);
+    }
+  }
+
+  paginate() {
+    const startIndex = (this.currentPage - 1) * this.pageSize;
+    const endIndex = startIndex + this.pageSize;
+    this.paginatedParamCres = this.paramCreslist.slice(startIndex, endIndex);
+  }
+  goToPage(page: number) {
+    if (page >= 1 && page <= this.totalPages.length) {
+      this.currentPage = page;
+      this.paginate();
+    }
+  }
+
 }

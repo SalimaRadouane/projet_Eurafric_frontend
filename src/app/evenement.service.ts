@@ -47,10 +47,14 @@ export class ParamCreService {
     return this.http.delete<void>(`${this.apiUrl}/activer/${id}`);
   }
   
-search(paramCre: paramcre): Observable<paramcre[]> {
+search(paramCre: paramcre,    startDate: string,
+  endDate: string): Observable<paramcre[]> {
   
-
-  return this.http.post<paramcre[]>(`${this.apiUrl}/searchCRE`,  paramCre);
+    const params = {
+      startDate,
+      endDate
+    };
+  return this.http.post<paramcre[]>(`${this.apiUrl}/searchCRE`,  paramCre,{ params });
 }
   
 }

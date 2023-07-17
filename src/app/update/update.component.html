@@ -1,14 +1,16 @@
+<div class="alert-success" role="alert" *ngIf="showAlert">
+  <strong>Modification successful!</strong> Your message here.
+</div>
+
 <style>
   .form-table td {
     padding: 0 30px;
   }
 </style>
 
-<div class="alert alert-success"   *ngIf="suc===1">
-  <strong >Success!</strong>
-</div>
 
-<h1>modifier element </h1>
+
+<!-- <h1>modifier element </h1> -->
 
 <div class="container">
   <form (ngSubmit)="onSubmit()">
@@ -17,7 +19,7 @@
         <td>
           <div class="form-group">
             <label for="codeDomaine">Code Domaine</label>
-            <input type="text" class="form-control" id="codeDomaine" name="codeDomaine" [(ngModel)]="newParamCre.codeDomaine">
+            <input type="text" class="form-control" id="newParamCre.codeDomaine" name="newParamCre.codeDomaine" [(ngModel)]="newParamCre.codeDomaine">
             <p class="error-message" *ngIf="newParamCre.codeDomaine && newParamCre.codeDomaine.length > 5">
               Le champ Code Domaine dépasse la taille maximale autorisée.
             </p>
@@ -163,7 +165,9 @@
     </table>
 
     <div class="d-grid gap-2 col-6 mx-auto">
-      <button class="btn btn-success" type="submit">modifier</button>
+      <button class="btn btn-primary"  type="submit">modifier</button>
+      <button class="btn btn-primary"  type="submit">Annuler</button>
     </div>
+   
   </form>
 </div>

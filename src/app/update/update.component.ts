@@ -12,27 +12,41 @@ export class UpdateComponent {
   newParamCre: paramcre = new paramcre();
   champsEnErreur: string[] = [];
   id!: number;
-  suc!: number;
+  showAlert: boolean = false;
 
   constructor(
     private paramCreService: ParamCreService,
-    private route: ActivatedRoute,
+    private route: ActivatedRoute,private router: Router
   ) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
-    this.newParamCre.id = this.id;
-  }
+this.getParamCreDetails();  }
 
   onSubmit() {
-    this.update();
-  }
 
+
+    window.alert('Modification successful!');
+
+    this.update();
+    
+    this.router.navigate(['/event-details/'+this.id]);
+
+  }
+  getParamCreDetails(): void {
+    this.id = this.route.snapshot.params['id'];
+    if (this.id) {
+      this.paramCreService.getParamCreById(this.id)
+        .subscribe((paramCre: paramcre) => {
+          this.newParamCre = paramCre;
+          console.log(this.newParamCre)
+        });
+    }
+  }
   update(): void {
     this.paramCreService.updateParamCre(this.newParamCre)
       .subscribe(
         () => {
-          this.suc=1;
           console.log('ParamCre mis à jour avec succès');
         },
         (error) => {

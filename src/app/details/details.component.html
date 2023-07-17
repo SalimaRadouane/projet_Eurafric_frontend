@@ -1,11 +1,11 @@
-<style>
+<!-- <style>
   .form-table td {
     padding: 0 30px;
   }
 </style>
 
 
-<h1>details de l'Evenement</h1>
+ <h1>details de l'Evenement</h1> 
 
 <div class="container">
     <table class="form-table">
@@ -110,12 +110,116 @@
           </div>
         </td>
       </tr>
-    </table>
-
-    <button type="button" class="btn btn-primary btn-lg" (click)="update(paramCre.id)">Modifier</button>
-    <span class="mx-2"></span>
+    </table> -->
+  
+    <!-- <span class="mx-2"></span> -->
     <!-- <button *ngIf="paramCre.topDesac === 'N'" type="button" class="btn btn-danger btn-lg" (click)="desactiver(paramCre.id)">Desactiver</button>
     <button *ngIf="paramCre.topDesac !== 'N'" type="button" class="btn btn-success btn-lg" (click)="activer(paramCre.id)">Activer</button>
      -->
-  
-</div>
+    
+<!-- </div> -->
+
+<h3 > Info genrale</h3>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Code Domaine</th>
+      <th scope="col">Code Application</th>
+      <th scope="col">Date Evenement</th>
+      <th scope="col">Code Structure</th>
+      <th scope="col">Code Emetteur</th>
+      <th scope="col">A Enrichir</th>
+      <th scope="col">A Comptabiliser</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>{{ paramCre.codeDomaine }}</td>
+      <td>{{ paramCre.codeApplication }}</td>
+      <td>{{ paramCre.codeEvenement }}</td>
+      <td>{{ paramCre.codeStructure }}</td>
+      <td>{{ paramCre.codeEmetteur }}</td>
+      <td>{{ paramCre.aEnrichir }}</td>
+      <td>{{ paramCre.aComptabiliser }}</td>
+
+
+
+
+    </tr>
+   
+  </tbody>
+</table> 
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Top Aggra Cdc</th>
+      <th scope="col">Val Aggra Cdc</th>
+      <th scope="col">Date Maj Aggra Cdc</th>
+
+      <th scope="col">Top Aggra Prec</th>
+      <th scope="col">Val Aggra Prec</th>
+      
+      <th scope="col">Date Maj Aggra Prec</th>
+      <th scope="col">Rib</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>{{ paramCre.topAggraCdc }}</td>
+      <td>{{ paramCre.valAggraCdc }}</td>
+      <td>{{ paramCre.dateMajAggraCdc }}</td>
+      <td>{{ paramCre.topAggraCtx }}</td>
+      <td>{{ paramCre.valAggraCtx }}</td>
+      <td>{{ paramCre.dateMajAggraCtx }}</td>
+      <td>{{ paramCre.rib }}</td>
+
+
+
+
+    </tr>
+   
+  </tbody>
+</table> 
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Top Aggra Cdc</th>
+      <th scope="col">Val Aggra Cdc</th>
+      <th scope="col">Date Maj Aggra Cdc</th>
+
+      <th scope="col">Top Aggra Prec</th>
+      <th scope="col">Val Aggra Prec</th>
+      
+      <th scope="col">Date Maj Aggra Prec</th>
+      <th scope="col">Rib</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>{{ paramCre.topAggraCdc }}</td>
+      <td>{{ paramCre.valAggraCdc }}</td>
+      <td>{{ paramCre.dateMajAggraCdc }}</td>
+      <td>{{ paramCre.topAggraPrec }}</td>
+      <td>{{ paramCre.valAggraPrec }}</td>
+      <td>{{ paramCre.dateMajAggraPrec }}</td>
+      <td>{{ paramCre.rib }}</td>
+
+
+
+
+    </tr>
+   
+  </tbody>
+</table> 
+<div class="d-grid gap-2 col-6 mx-auto">
+      <button class="btn btn-primary" (click)="update(paramCre.id)"type="submit">Modifier</button>
+    </div>  
