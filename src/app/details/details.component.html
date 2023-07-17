@@ -124,7 +124,6 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
       <th scope="col">Code Domaine</th>
       <th scope="col">Code Application</th>
       <th scope="col">Date Evenement</th>
@@ -136,7 +135,6 @@
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
       <td>{{ paramCre.codeDomaine }}</td>
       <td>{{ paramCre.codeApplication }}</td>
       <td>{{ paramCre.codeEvenement }}</td>
@@ -152,25 +150,24 @@
    
   </tbody>
 </table> 
+<h3 > Info Supplementaire</h3>
 
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
       <th scope="col">Top Aggra Cdc</th>
       <th scope="col">Val Aggra Cdc</th>
       <th scope="col">Date Maj Aggra Cdc</th>
 
-      <th scope="col">Top Aggra Prec</th>
-      <th scope="col">Val Aggra Prec</th>
+      <th scope="col">Top Aggra Ctx</th>
+      <th scope="col">Val Aggra Ctx</th>
       
-      <th scope="col">Date Maj Aggra Prec</th>
+      <th scope="col">Date Maj Aggra Ctx</th>
       <th scope="col">Rib</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
       <td>{{ paramCre.topAggraCdc }}</td>
       <td>{{ paramCre.valAggraCdc }}</td>
       <td>{{ paramCre.dateMajAggraCdc }}</td>
@@ -186,32 +183,53 @@
    
   </tbody>
 </table> 
-
+<h3>STAT-PASSAGE</h3>
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">Top Aggra Cdc</th>
-      <th scope="col">Val Aggra Cdc</th>
-      <th scope="col">Date Maj Aggra Cdc</th>
+      <th scope="col">Date Der Passage</th>
+      <th scope="col">Ligne Valide</th>
+      <th scope="col">Ligne Rejete</th>
 
+      <th scope="col">Compteur Even</th>
       <th scope="col">Top Aggra Prec</th>
       <th scope="col">Val Aggra Prec</th>
       
       <th scope="col">Date Maj Aggra Prec</th>
-      <th scope="col">Rib</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>{{ paramCre.topAggraCdc }}</td>
-      <td>{{ paramCre.valAggraCdc }}</td>
-      <td>{{ paramCre.dateMajAggraCdc }}</td>
+      <td>{{ paramCre.dateDerPassage }}</td>
+      <td>{{ paramCre.ligneValide }}</td>
+      <td>{{ paramCre.ligneRejete }}</td>
+      <td>{{ paramCre.compteurEven }}</td>
       <td>{{ paramCre.topAggraPrec }}</td>
       <td>{{ paramCre.valAggraPrec }}</td>
       <td>{{ paramCre.dateMajAggraPrec }}</td>
-      <td>{{ paramCre.rib }}</td>
+    
+
+
+
+
+    </tr>
+   
+  </tbody>
+</table> 
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Date Mise Prod</th>
+      <th scope="col">Etat Initial</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ paramCre.dateMiseProd }}</td>
+      <td>{{ paramCre.etatInitial }}</td>
+  
 
 
 

@@ -1,41 +1,135 @@
 <div class="container">
   <form class="row" role="search" (ngSubmit)="onSubmit()">
-    <div class="col-md-4 mb-3">
-      <label for="codeDomaine">Code Domaine:</label>
-      <input class="form-control" type="search" id="codeDomaine" name="codeDomaine" placeholder="Code Domaine" [(ngModel)]="ParamCre.codeDomaine" aria-label="Search">
-    </div>
     
-    <div class="col-md-4 mb-3">
-      <label for="codeApplication">Code application:</label>
-      <input class="form-control" type="search" id="codeApplication" name="codeApplication" placeholder="Code application" [(ngModel)]="ParamCre.codeApplication" aria-label="Search">
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="codeEvenement">Code Evenement:</label>
-      <input class="form-control" type="search" id="codeEvenement" name="codeEvenement" placeholder="Code Evenement" [(ngModel)]="ParamCre.codeEvenement" aria-label="Search">
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="codeStructure">Code Structure:</label>
-      <input class="form-control" type="search" id="codeStructure" name="codeStructure" placeholder="Code Structure" [(ngModel)]="ParamCre.codeStructure" aria-label="Search">
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="codeEmetteur">Code Emetteur:</label>
-      <input class="form-control" type="search" id="codeEmetteur" name="codeEmetteur" placeholder="Code Emetteur" [(ngModel)]="ParamCre.codeEmetteur" aria-label="Search">
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="startDate">Start Date:</label>
-      <input class="form-control" type="date" id="startDate" name="startDate" [(ngModel)]="startDate" aria-label="Search">
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="endDate">End Date:</label>
-      <input class="form-control" type="date" id="endDate" name="endDate" [(ngModel)]="endDate" aria-label="Search">
-    </div>
-    <div class="form-group row">
-      <div class="col-sm-10">
-        <button type="submit" class="btn btn-primary">Search</button>
-      </div>
-    </div>
+<table class="table" style="width:100%">
+  <tr>
+       <th >Code Domaine: </th>
+      
+       <td>
+         <input class="form-control" type="search" id="codeDomaine" name="codeDomaine" placeholder="Code Domaine" [(ngModel)]="ParamCre.codeDomaine" aria-label="Search">
+       </td>
+  </tr>
+  <tr>
+       <th>Code application:</th>
+       <td>     
+         <input class="form-control" type="search" id="codeApplication" name="codeApplication" placeholder="Code application" [(ngModel)]="ParamCre.codeApplication" aria-label="Search">
+     </td> 
+   </tr>
+   <tr>
+       <th>Code Evenement:</th>
+ 
+       <td>    
+          <input class="form-control" type="search" id="codeEvenement" name="codeEvenement" placeholder="Code Evenement" [(ngModel)]="ParamCre.codeEvenement" aria-label="Search">
+       </td>
+   </tr>
+   <tr>
+       <th >  Code Structure: </th>
+      
+       <td>
+         <input class="form-control" type="search" id="codeStructure" name="codeStructure" placeholder="Code Structure" [(ngModel)]="ParamCre.codeStructure" aria-label="Search">
+       </td>
+       
+   </tr>
+     <tr>
+       <th>Code Emetteur:</th>
+       <td>      
+         <input class="form-control" type="search" id="codeEmetteur" name="codeEmetteur" placeholder="Code Emetteur" [(ngModel)]="ParamCre.codeEmetteur" aria-label="Search">
+       </td>
+     </tr>
+     <tr>
+       <th >date </th> <td>du</td>
+       <td>          
+        <input class="form-control" type="date" id="startDate" name="startDate" [(ngModel)]="startDate" aria-label="Search">
+ 
+       </td>
+    
+       <td >au</td>
+      
+       <td> <input class="form-control" type="date" id="endDate" name="endDate" [(ngModel)]="endDate" aria-label="Search">
+ 
+       </td>
+       <td> <div class="form-group row">
+         <div class="col-sm-10">
+           <button type="submit" class="btn btn-primary">Search</button>
+         </div>
+       </div></td>
+     </tr>
+    
+ </table>
+ 
+ 
+ 
+ 
+ 
   </form>
 </div>
+
+
+
+
+<!-- 
+
+
+<table class="table" style="width:100%">
+  <tr>
+       <th >Code Domaine: </th>
+      
+       <td>
+         <input class="form-control" type="search" id="codeDomaine" name="codeDomaine" placeholder="Code Domaine" [(ngModel)]="ParamCre.codeDomaine" aria-label="Search">
+       </td>
+  </tr>
+  <tr>
+       <th>Code application:</th>
+       <td>     
+         <input class="form-control" type="search" id="codeApplication" name="codeApplication" placeholder="Code application" [(ngModel)]="ParamCre.codeApplication" aria-label="Search">
+     </td> 
+   </tr>
+   <tr>
+       <th>Code Evenement:</th>
+ 
+       <td>    
+          <input class="form-control" type="search" id="codeEvenement" name="codeEvenement" placeholder="Code Evenement" [(ngModel)]="ParamCre.codeEvenement" aria-label="Search">
+       </td>
+   </tr>
+   <tr>
+       <th >  Code Structure: </th>
+      
+       <td>
+         <input class="form-control" type="search" id="codeStructure" name="codeStructure" placeholder="Code Structure" [(ngModel)]="ParamCre.codeStructure" aria-label="Search">
+       </td>
+       
+   </tr>
+     <tr>
+       <th>Code Emetteur:</th>
+       <td>      
+         <input class="form-control" type="search" id="codeEmetteur" name="codeEmetteur" placeholder="Code Emetteur" [(ngModel)]="ParamCre.codeEmetteur" aria-label="Search">
+       </td>
+     </tr>
+     <tr>
+       <th >date </th> <td>du</td>
+       <td>          
+        <input class="form-control" type="date" id="startDate" name="startDate" [(ngModel)]="startDate" aria-label="Search">
+ 
+       </td>
+    
+       <td >au</td>
+      
+       <td> <input class="form-control" type="date" id="endDate" name="endDate" [(ngModel)]="endDate" aria-label="Search">
+ 
+       </td>
+       <td> <div class="form-group row">
+         <div class="col-sm-10">
+           <button type="submit" class="btn btn-primary">Search</button>
+         </div>
+       </div></td>
+     </tr>
+    
+ </table>
+  -->
+ 
+ 
+ 
+ 
 
 <div class="container">
   <div style="width: 100%; overflow-x: auto;">

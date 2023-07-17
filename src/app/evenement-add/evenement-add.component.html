@@ -14,13 +14,12 @@
     <table class="form-table">
       <tr>
         <td>
-          <div class="form-group">
-            <label for="codeDomaine">Code Domaine</label>
-            <input type="text" class="form-control" id="codeDomaine" name="codeDomaine" [(ngModel)]="newParamCre.codeDomaine">
+            <label for="codeDomaine">Code Domaine</label></td><td>
+            <input type="text" class="form-control" id="codeDomaine" name="codeDomaine" [(ngModel)]="newParamCre.codeDomaine"></td>
             <p class="error-message" *ngIf="newParamCre.codeDomaine && newParamCre.codeDomaine.length > 5">
               Le champ Code Domaine dépasse la taille maximale autorisée.
             </p>
-          </div>
+          </tr><tr><td>
           <div class="form-group">
             <label for="codeApplication">Code Application</label>
             <input type="text" class="form-control" id="codeApplication" name="codeApplication" [(ngModel)]="newParamCre.codeApplication">
@@ -160,7 +159,11 @@
         </td>
       </tr>
     </table>
-
+    <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" type="submit"data-bs-content="Top popover">
+      Ajouter    </button>
+    <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Right popover">
+Annuler    </button>
+    
     <div class="d-grid gap-2 col-6 mx-auto">
       <button class="btn btn-primary" type="submit">Ajouter</button>
     </div>
