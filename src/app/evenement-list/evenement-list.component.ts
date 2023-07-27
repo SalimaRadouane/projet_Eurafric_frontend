@@ -11,13 +11,13 @@ export class EvenementListComponent implements OnInit {
   paramCres: paramcre[] = []; ;
   currentPage = 0;
   pageSize = 10;
+  size_data=0;
   
   constructor(private paramCreService: ParamCreService,private router: Router ) { }
 
   ngOnInit() {
     this.getPaginatedData();
-
-    console.log('ParamCres:', this.paramCres);
+    
   }
 
   getPaginatedData(): void {
@@ -26,9 +26,11 @@ export class EvenementListComponent implements OnInit {
     this.paramCreService.getPaginatedEntities(this.currentPage, this.pageSize)
       .subscribe((data: any) => {
         this.paramCres = data.content;
-        console.log(data);
-        console.log('ParamCres:', this.paramCres);
-
+        this.paramCreService.getParamCres().subscribe((data: any) => {
+      this.size_data = data.length;
+      
+     
+    });
       });
   }
   
@@ -97,7 +99,7 @@ export class EvenementListComponent implements OnInit {
   
   
   getTotalPages(): number[] {
-    const totalElements = 91; 
+    const totalElements = this.size_data; 
     const totalPages = Math.ceil(totalElements / this.pageSize);
     return Array(totalPages).fill(0).map((_, index) => index + 1);
   }

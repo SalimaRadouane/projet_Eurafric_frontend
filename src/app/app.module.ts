@@ -12,6 +12,10 @@ import { ParamCreDetailsComponent } from './details/details.component';
 import { UpdateComponent } from './update/update.component';
 import { SearchComponent } from './search/search.component';
 import { InfoComponent } from './info/info.component'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // or NoopAnimationsModule
+
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 @NgModule({
   declarations: [
@@ -22,13 +26,16 @@ import { InfoComponent } from './info/info.component';
     ParamCreDetailsComponent,
     UpdateComponent,
     SearchComponent,
-    InfoComponent
+    InfoComponent,   
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule  ,MatPaginatorModule
+    FormsModule  ,MatPaginatorModule,
+    MatSnackBarModule,BrowserAnimationsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

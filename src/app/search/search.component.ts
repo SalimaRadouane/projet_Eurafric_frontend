@@ -18,7 +18,11 @@ export class SearchComponent {
   totalItems: number = 0;
   totalPages: number[] = [];
   paginatedParamCres!: paramcre[];
-
+  codeDomaineOptions: string[] = [];
+  codeApplicationOptions: string[] = [];
+  codeEvenementOptions: string[] = [];
+  codeStructureOptions: string[] = [];
+  codeEmetteurOptions: string[] = [];
 
   constructor(private paramCreService: ParamCreService, private router: Router) { 
   }
@@ -26,8 +30,39 @@ export class SearchComponent {
   onSubmit() {
     this.currentPage = 1;
     this.search();
+    
   }
+  ngOnInit(): void {
+    
+this.paramCreService.getcodeApplication()
+.subscribe(
+  (codeApplication: string[]) => this.codeApplicationOptions = codeApplication,
+  (error) => console.log(error)
+);
 
+
+this.paramCreService.getcodeStructure()
+.subscribe( 
+  (codeStructure: string[]) => this.codeStructureOptions = codeStructure,
+  (error) => console.log(error)
+);
+this.paramCreService.getcodeEvenement()
+.subscribe(
+  (codeEvenement: string[]) => this.codeEvenementOptions = codeEvenement,
+  (error) => console.log(error)
+);
+this.paramCreService.getCodeDomaines()
+.subscribe(
+  (codeDomaines: string[]) => this.codeDomaineOptions = codeDomaines,
+  (error) => console.log(error)
+);
+console.log(this.codeDomaineOptions)
+this.paramCreService.getcodeEmetteur()
+.subscribe(
+  (codeEmetteur: string[]) => this.codeEmetteurOptions = codeEmetteur,
+  (error) => console.log(error)
+);
+  }
   search() {
     this.paramCreService.search(this.ParamCre, this.startDate, this.endDate).subscribe(
       (data: paramcre[]) => {

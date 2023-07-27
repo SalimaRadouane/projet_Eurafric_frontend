@@ -56,5 +56,19 @@ search(paramCre: paramcre,    startDate: string,
     };
   return this.http.post<paramcre[]>(`${this.apiUrl}/searchCRE`,  paramCre,{ params });
 }
-  
+getCodeDomaines(): Observable<string[]> {
+  return this.http.get<string[]>(`${this.apiUrl}/codedomaine`);
+}
+getcodeApplication(): Observable<string[]> {
+  return this.http.get<string[]>(`${this.apiUrl}/codeApplication`);
+}
+getcodeEvenement(): Observable<string[]> {
+  return this.http.get<string[]>(`${this.apiUrl}/codeEvenement`);
+}
+getcodeStructure(): Observable<string[]> {
+  return this.http.get<string[]>(`${this.apiUrl}/codeStructure`);
+}
+getcodeEmetteur(): Observable<string[]> {
+  return this.http.get<string[]>(`${this.apiUrl}/codeEmetteur`);
+}
 }

@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'list', component: EvenementListComponent },
   {path: 'event-details/:id', component: ParamCreDetailsComponent},
   {path: 'event-update/:id', component: UpdateComponent},
-  {path: 'list/search', component: SearchComponent},
+  {path: 'search', component: SearchComponent},
   {path: 'info', component: InfoComponent}
 ];
 

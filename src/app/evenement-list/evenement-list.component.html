@@ -16,13 +16,14 @@
       word-wrap: break-word;
       max-width: 2px; 
     }
+    
   </style>
 </head>
 <body>
   <div style="width: 100%; overflow-x: auto;">
     <table class="table table-striped">
       <thead>
-        
+          
         <tr>
           <th>D/A</th>
           <th>ID</th>
@@ -31,9 +32,7 @@
           <th>Code Structure</th>
           <th>Code Emetteur</th>
           <th> <div class="navbar-nav ms-auto">
-          <button class="btn btn-link nav-link" routerLink="search" routerLinkActive="active" type="button">
-            <i class="bi bi-search"></i> chercher
-          </button>
+        
         </div></th>
         </tr>
       </thead>
@@ -61,18 +60,18 @@
     <ul class="pagination justify-content-center">
       <!-- ... -->
       <li class="page-item" [class.disabled]="currentPage === getTotalPages()[0]">
-        <a class="page-link" (click)="goToPreviousPage()">Previous</a>
+        <a class="page-link" (click)="goToPreviousPage()">Précédent</a>
       </li>
       <li class="page-item" *ngFor="let page of getTotalPages()">
         <a class="page-link" [class.active]="currentPage === page" (click)="goToPage(page)">{{ page }}</a>
       </li>
       <li class="page-item" [class.disabled]="currentPage === getTotalPages()[getTotalPages().length - 1]">
-        <a class="page-link" (click)="goToNextPage()">Next</a>
+        <a class="page-link" (click)="goToNextPage()">Suivant</a>
       </li>
       <!-- ... -->
     </ul>
   </nav>
-  
-  
+ 
 </body>
+
 </html>

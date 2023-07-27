@@ -1,3 +1,19 @@
+<style>
+ 
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 0px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+ 
+</style>
+
 <div class="container">
   <form class="row" role="search" (ngSubmit)="onSubmit()">
     
@@ -6,42 +22,53 @@
        <th >Code Domaine: </th>
       
        <td>
-         <input class="form-control" type="search" id="codeDomaine" name="codeDomaine" placeholder="Code Domaine" [(ngModel)]="ParamCre.codeDomaine" aria-label="Search">
-       </td>
+        <select class="form-control" id="codeDomaine" name="codeDomaine" [(ngModel)]="ParamCre.codeDomaine">
+          <option value="" >Select Code Domaine</option>
+          <option *ngFor="let option of codeDomaineOptions" [value]="option">{{ option }}</option>
+        </select>        </td>
   </tr>
   <tr>
        <th>Code application:</th>
        <td>     
-         <input class="form-control" type="search" id="codeApplication" name="codeApplication" placeholder="Code application" [(ngModel)]="ParamCre.codeApplication" aria-label="Search">
-     </td> 
+        <select class="form-control" id="codeApplication" name="codeApplication " [(ngModel)]="ParamCre.codeApplication">
+          <option value="" >Select Code Application</option>
+          <option *ngFor="let option of codeApplicationOptions" [value]="option">{{ option }}</option>
+        </select>      </td> 
    </tr>
    <tr>
        <th>Code Evenement:</th>
  
        <td>    
-          <input class="form-control" type="search" id="codeEvenement" name="codeEvenement" placeholder="Code Evenement" [(ngModel)]="ParamCre.codeEvenement" aria-label="Search">
-       </td>
+        <select class="form-control" id="codeEvenement" name="codeEvenement " [(ngModel)]="ParamCre.codeEvenement">
+          <option value="" >Select Code Evenement</option>
+          <option *ngFor="let option of codeEvenementOptions" [value]="option">{{ option }}</option>
+        </select>         </td>
    </tr>
    <tr>
        <th >  Code Structure: </th>
       
        <td>
-         <input class="form-control" type="search" id="codeStructure" name="codeStructure" placeholder="Code Structure" [(ngModel)]="ParamCre.codeStructure" aria-label="Search">
-       </td>
+        <select class="form-control" id="codeStructure" name="codeStructure " [(ngModel)]="ParamCre.codeStructure">
+          <option value="">Select Code Structure</option>
+          <option *ngFor="let option of codeStructureOptions" [value]="option">{{ option }}</option>
+        </select>
+            </td>
        
    </tr>
      <tr>
        <th>Code Emetteur:</th>
        <td>      
-         <input class="form-control" type="search" id="codeEmetteur" name="codeEmetteur" placeholder="Code Emetteur" [(ngModel)]="ParamCre.codeEmetteur" aria-label="Search">
-       </td>
+        <select class="form-control" id="codeEmetteur" name="codeEmetteur " [(ngModel)]="ParamCre.codeEmetteur">
+          <option value="" >Select Code Emetteur</option>
+          <option *ngFor="let option of codeEmetteurOptions" [value]="option">{{ option }}</option>
+        </select>       </td>
      </tr>
      <tr>
-       <th >date </th> <td>du</td>
-       <td>          
+       <th >Date:</th> 
+       <td class="d-flex justify-between">
+        <span class="ms-2">du</span>
         <input class="form-control" type="date" id="startDate" name="startDate" [(ngModel)]="startDate" aria-label="Search">
- 
-       </td>
+      </td>
     
        <td >au</td>
       
@@ -50,7 +77,7 @@
        </td>
        <td> <div class="form-group row">
          <div class="col-sm-10">
-           <button type="submit" class="btn btn-primary">Search</button>
+           <button type="submit" class="btn btn-primary">Rechercher</button>
          </div>
        </div></td>
      </tr>
@@ -65,67 +92,6 @@
 </div>
 
 
-
-
-<!-- 
-
-
-<table class="table" style="width:100%">
-  <tr>
-       <th >Code Domaine: </th>
-      
-       <td>
-         <input class="form-control" type="search" id="codeDomaine" name="codeDomaine" placeholder="Code Domaine" [(ngModel)]="ParamCre.codeDomaine" aria-label="Search">
-       </td>
-  </tr>
-  <tr>
-       <th>Code application:</th>
-       <td>     
-         <input class="form-control" type="search" id="codeApplication" name="codeApplication" placeholder="Code application" [(ngModel)]="ParamCre.codeApplication" aria-label="Search">
-     </td> 
-   </tr>
-   <tr>
-       <th>Code Evenement:</th>
- 
-       <td>    
-          <input class="form-control" type="search" id="codeEvenement" name="codeEvenement" placeholder="Code Evenement" [(ngModel)]="ParamCre.codeEvenement" aria-label="Search">
-       </td>
-   </tr>
-   <tr>
-       <th >  Code Structure: </th>
-      
-       <td>
-         <input class="form-control" type="search" id="codeStructure" name="codeStructure" placeholder="Code Structure" [(ngModel)]="ParamCre.codeStructure" aria-label="Search">
-       </td>
-       
-   </tr>
-     <tr>
-       <th>Code Emetteur:</th>
-       <td>      
-         <input class="form-control" type="search" id="codeEmetteur" name="codeEmetteur" placeholder="Code Emetteur" [(ngModel)]="ParamCre.codeEmetteur" aria-label="Search">
-       </td>
-     </tr>
-     <tr>
-       <th >date </th> <td>du</td>
-       <td>          
-        <input class="form-control" type="date" id="startDate" name="startDate" [(ngModel)]="startDate" aria-label="Search">
- 
-       </td>
-    
-       <td >au</td>
-      
-       <td> <input class="form-control" type="date" id="endDate" name="endDate" [(ngModel)]="endDate" aria-label="Search">
- 
-       </td>
-       <td> <div class="form-group row">
-         <div class="col-sm-10">
-           <button type="submit" class="btn btn-primary">Search</button>
-         </div>
-       </div></td>
-     </tr>
-    
- </table>
-  -->
  
  
  
@@ -141,6 +107,7 @@
           <th>Code Application</th>
           <th>Code Structure</th>
           <th>Code Emetteur</th>
+          <th>Code Evenement</th>
         </tr>
       </thead>
       <tbody>
@@ -150,27 +117,24 @@
           <td>{{ paramCre.codeApplication }}</td>
           <td>{{ paramCre.codeStructure }}</td>
           <td>{{ paramCre.codeEmetteur }}</td>
+          <td>{{ paramCre.codeEvenement }}</td>
         </tr>
       </tbody>
     </table>
   </div>
   <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-center">
-      <!-- <li class="page-item" [ngClass]="{ 'disabled': currentPage === 1 }">
-        <a class="page-link" (click)="goToPage(1)">First</a>
-      </li> -->
+    
       <li class="page-item" [ngClass]="{ 'disabled': currentPage === 1 }">
-        <a class="page-link" (click)="goToPage(currentPage - 1)">Previous</a>
+        <a class="page-link" (click)="goToPage(currentPage - 1)">Précédent</a>
       </li>
       <li class="page-item" *ngFor="let page of totalPages">
         <a class="page-link" [ngClass]="{ 'active': currentPage === page }" (click)="goToPage(page)">{{ page }}</a>
       </li>
       <li class="page-item" [ngClass]="{ 'disabled': currentPage === totalPages[totalPages.length - 1] }">
-        <a class="page-link" (click)="goToPage(currentPage + 1)">Next</a>
+        <a class="page-link" (click)="goToPage(currentPage + 1)">Suivant</a>
       </li>
-      <!-- <li class="page-item" [ngClass]="{ 'disabled': currentPage === totalPages[totalPages.length - 1] }">
-        <a class="page-link" (click)="goToPage(totalPages[totalPages.length - 1])">Last</a>
-      </li> -->
+     
     </ul>
   </nav>
 </div>

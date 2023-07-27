@@ -1,18 +1,56 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand">EURAFRIC</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link active" routerLink="list" routerLinkActive="active" aria-current="page">Home</a>
-        <a class="nav-link" routerLink="add" routerLinkActive="active">Ajouter Un Evenement</a>
-        <a class="nav-link " routerLink="info" routerLinkActive="active">Info</a>
+
+
+<header>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0">
+    <div class="container">
+      <a class="navbar-brand" href="#!"><span style="color: #5e9693;">EURA</span><span style="color: #fff;">FRIC</span></a>
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+        data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="info" routerLinkActive="active" aria-current="page">accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="list" routerLinkActive="active" aria-current="page">List des Evenements</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="add" routerLinkActive="active" aria-current="page">Ajouter Un Evenement</a>
+          </li>
+          
+        </ul>
+        <ul class="navbar-nav d-flex flex-row">
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" routerLink="search" routerLinkActive="active">Rechercher</a>
+         
+          </li>
+          
+         
+        </ul>
       </div>
     </div>
-  </div>
-</nav>
+  </nav>
+  <!-- Navbar -->
+
+  <!--Section: Design Block-->
+  <section>
+    <div id="intro" class="bg-image vh-100" [ngStyle]="{ 'background-image': 'url(\'assets/bg.jpg\')' }">
+      <div class="mask" style="background-color: rgba(250, 182, 162, 0.15);"></div>
+    </div>
+  </section>
+  </header>
+  
+
 
 <router-outlet></router-outlet>
+<!-- <footer class="bg-light text-center text-lg-start fixed-bottom py-3">
+  <div class="text-center">
+    © 2023 Copyright:
+    <a class="text-dark" href="https://www.eurafric-information.com">Eurafric-information.com</a>
+  </div>
+</footer> -->
+

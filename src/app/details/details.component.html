@@ -1,125 +1,35 @@
-<!-- <style>
-  .form-table td {
-    padding: 0 30px;
+ <style>
+ 
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
   }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  
+  .button-container {
+    text-align: center; /* Centrer horizontalement le contenu */
+  }
+
+  /* Style pour l'espace entre le bouton et le bas de la page */
+  .button-space {
+    margin-bottom: 100px; /* Espace de 100 pixels en bas du bouton */
+  }
+ 
 </style>
 
+<div style="margin-top: 100px;"></div>
 
- <h1>details de l'Evenement</h1> 
-
-<div class="container">
-    <table class="form-table">
-      <tr>
-        <td>
-          <div class="form-group">
-            <label for="codeDomaine"><Strong>Code Domaine</Strong></label>
-              <p>{{ paramCre.codeDomaine }}</p>
-          </div>
-          <div class="form-group">
-            <label for="codeApplication"><Strong>Code Application</Strong></label>
-            <p>{{ paramCre.codeApplication }}</p>
-          </div>
-        </td>
-        <td>
-          <div class="form-group">
-            <label for="codeEvenement"><Strong>Code Evenement</Strong></label>
-            <p>{{ paramCre.codeEvenement }}</p>
-          </div>
-          <div class="form-group">
-            <label for="codeStructure"><Strong>Code Structure</Strong></label>
-           <p>{{ paramCre.codeStructure }}</p>
-          </div>
-        </td>
-        <td>
-          <div class="form-group">
-            <label for="codeEmetteur"><Strong>Code Emetteur</Strong></label>
-          <p>{{ paramCre.codeEmetteur }}</p>
-          </div>
-          <div class="form-group">
-            <label for="aEnrichir"><Strong>A Enrichir</Strong></label>
-            <p>{{ paramCre.aEnrichir }}</p>
-          </div>
-        </td>
-        <td>
-          <div class="form-group">
-            <label for="aComptabiliser"><Strong>A Comptabiliser</Strong></label>
-            <p>{{ paramCre.aComptabiliser }}</p>
-          </div>
-          <div class="form-group">
-            <label for="dateMiseProd"><Strong>Date Mise Prod</Strong></label>
-            <p>{{ paramCre.dateMiseProd | date }}</p>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <div class="form-group">
-            <label for="etatInitial"><Strong>Etat Initial</Strong></label>
-            <p>{{ paramCre.etatInitial }}</p>
-          </div>
-          <div class="form-group">
-            <label for="topAggraCdc"><Strong>Top Aggra Cdc</Strong></label>
-           <p>{{ paramCre.topAggraCdc }}</p>
-          </div>
-        </td>
-        <td>
-          <div class="form-group">
-            <label for="valAggraCdc"><Strong>Val Aggra Cdc</Strong></label>
-           <p>{{ paramCre.valAggraCdc }}</p>
-          </div>
-          <div class="form-group">
-            <label for="dateMajAggraCdc"><Strong>Date Maj Aggra Cdc</Strong></label>
-            <p>{{ paramCre.dateMajAggraCdc | date }}</p>
-          </div>
-        </td>
-        <td>
-          <div class="form-group">
-            <label for="topAggraCtx"><Strong>Top Aggra Ctx</Strong></label>
-            <p>{{ paramCre.topAggraCtx }}</p>
-          </div>
-          <div class="form-group">
-            <label for="valAggraCtx"><Strong>Val Aggra Ctx</Strong></label>
-            <p>{{ paramCre.valAggraCtx }}</p>
-          </div>
-        </td>
-        <td>
-          <div class="form-group">
-            <label for="dateMajAggraCtx"><Strong>Date Maj Aggra Ctx</Strong></label>
-            <p>{{ paramCre.dateMajAggraCtx | date }}</p>
-          </div>
-          <div class="form-group">
-            <label for="rib"><Strong>Rib</Strong></label>
-           <p>{{ paramCre.rib }}</p>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <div class="form-group">
-            <label for="topAggraPrec"><Strong>Top Aggra Prec</Strong></label> <p>{{ paramCre.topAggraPrec }}</p>
-          </div>
-          <div class="form-group">
-            <label for="valAggraPrec"><Strong>Val Aggra Prec</Strong></label>
-            <p>{{ paramCre.valAggraPrec }}</p>
-          </div>
-        </td>
-        <td>
-          <div class="form-group">
-            <label for="dateMajAggraPrec"><Strong>Date Maj Aggra Prec</Strong></label>
-            <p>{{ paramCre.valAggraPrec }}</p>
-          </div>
-        </td>
-      </tr>
-    </table> -->
-  
-    <!-- <span class="mx-2"></span> -->
-    <!-- <button *ngIf="paramCre.topDesac === 'N'" type="button" class="btn btn-danger btn-lg" (click)="desactiver(paramCre.id)">Desactiver</button>
-    <button *ngIf="paramCre.topDesac !== 'N'" type="button" class="btn btn-success btn-lg" (click)="activer(paramCre.id)">Activer</button>
-     -->
-    
-<!-- </div> -->
-
-<h3 > Info genrale</h3>
+<h1 style="text-align:center; color:rgb(0, 0, 0);"> Information genrale</h1>
 
 <table class="table">
   <thead>
@@ -150,19 +60,21 @@
    
   </tbody>
 </table> 
-<h3 > Info Supplementaire</h3>
+<div style="margin-top: 100px;"></div>
+
+<h1 style="text-align:center; color:rgb(0, 0, 0);">Information Supplementaire</h1>
 
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Top Aggra Cdc</th>
-      <th scope="col">Val Aggra Cdc</th>
-      <th scope="col">Date Maj Aggra Cdc</th>
+      <th scope="col">Top Aggragation Cdc</th>
+      <th scope="col">Val Aggragation Cdc</th>
+      <th scope="col">Date Maj Aggragation Cdc</th>
 
-      <th scope="col">Top Aggra Ctx</th>
-      <th scope="col">Val Aggra Ctx</th>
+      <th scope="col">Top Aggragation Ctx</th>
+      <th scope="col">Val Aggragation Ctx</th>
       
-      <th scope="col">Date Maj Aggra Ctx</th>
+      <th scope="col">Date Maj Aggragation Ctx</th>
       <th scope="col">Rib</th>
     </tr>
   </thead>
@@ -183,19 +95,17 @@
    
   </tbody>
 </table> 
-<h3>STAT-PASSAGE</h3>
+<div style="margin-top: 100px;"></div>
+<h1 style="text-align:center; color:rgb(0, 0, 0);">Statistique d'événement par jour</h1>
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Date Der Passage</th>
-      <th scope="col">Ligne Valide</th>
-      <th scope="col">Ligne Rejete</th>
+      <th scope="col">Date De Passage</th>
+      <th scope="col">Cre Validés</th>
+      <th scope="col">Cre Rejetés</th>
 
-      <th scope="col">Compteur Even</th>
-      <th scope="col">Top Aggra Prec</th>
-      <th scope="col">Val Aggra Prec</th>
-      
-      <th scope="col">Date Maj Aggra Prec</th>
+      <th scope="col">Compteur d'événement</th>
+
     </tr>
   </thead>
   <tbody>
@@ -204,9 +114,6 @@
       <td>{{ paramCre.ligneValide }}</td>
       <td>{{ paramCre.ligneRejete }}</td>
       <td>{{ paramCre.compteurEven }}</td>
-      <td>{{ paramCre.topAggraPrec }}</td>
-      <td>{{ paramCre.valAggraPrec }}</td>
-      <td>{{ paramCre.dateMajAggraPrec }}</td>
     
 
 
@@ -216,12 +123,19 @@
    
   </tbody>
 </table> 
+<div style="margin-top: 100px;"></div>
+
+<h1 style="text-align:center; color:rgb(0, 0, 0);">Autre</h1>
 
 <table class="table">
   <thead>
     <tr>
       <th scope="col">Date Mise Prod</th>
       <th scope="col">Etat Initial</th>
+      <th scope="col">Top Aggragation Prec</th>
+      <th scope="col">Val Aggragation Prec</th>
+      
+      <th scope="col">Date Maj Aggragation Prec</th>
       
     </tr>
   </thead>
@@ -230,14 +144,21 @@
       <td>{{ paramCre.dateMiseProd }}</td>
       <td>{{ paramCre.etatInitial }}</td>
   
-
+      <td>{{ paramCre.topAggraPrec }}</td>
+      <td>{{ paramCre.valAggraPrec }}</td>
+      <td>{{ paramCre.dateMajAggraPrec }}</td>
+    
 
 
 
     </tr>
    
   </tbody>
-</table> 
-<div class="d-grid gap-2 col-6 mx-auto">
-      <button class="btn btn-primary" (click)="update(paramCre.id)"type="submit">Modifier</button>
-    </div>  
+</table>  
+<div class="button-container">
+
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <button class="btn btn-primary" (click)="update(paramCre.id)" type="submit">Modifier</button> <div class="button-space"></div>
+  </div>
+ 
+</div>
